@@ -36,10 +36,13 @@ export function SkillsSection() {
             return (
               <div
                 key={category.title}
-                className="card-hover bg-card p-6 ring-1 ring-foreground/5"
+                className="card-hover bg-card p-6 ring-1 ring-foreground/5 relative overflow-hidden"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center bg-primary/10 text-primary">
-                  <Icon className="h-5 w-5" />
+                <div className="absolute -right-4 -top-4 pointer-events-none">
+                  <Icon
+                    className="h-28 w-28 opacity-[0.27] text-primary"
+                    strokeWidth={1.5}
+                  />
                 </div>
                 <h3 className="font-semibold text-lg mb-3">
                   {category.title}
