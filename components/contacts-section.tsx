@@ -36,8 +36,8 @@ export function ContactsSection() {
               href={contact.href}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ minWidth: 260 }}
-              className="group flex items-center justify-center gap-3 px-4 py-2 ring-1 ring-foreground/5 bg-card transition-colors hover:ring-primary/40"
+              style={{ minWidth: "min(100%, 260px)" }}
+              className="group flex items-center justify-center gap-3 px-4 py-2 ring-1 ring-foreground/5 bg-card transition-colors hover:ring-primary/40 sm:min-w-0"
             >
               <Icon className="h-5 w-5 text-primary shrink-0" />
               <div className="min-w-0 text-left">
