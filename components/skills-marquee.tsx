@@ -1,33 +1,22 @@
-"use client";
-
-import { cn } from "@/lib/utils";
-
-interface SkillsMarqueeProps {
+type SkillsMarqueeProps = {
   skills: string[];
-  direction?: "left" | "right";
-}
+  direction: "left" | "right";
+};
 
-export function SkillsMarquee({
-  skills,
-  direction = "left",
-}: SkillsMarqueeProps) {
-  const items = [...skills, ...skills];
-
+export function SkillsMarquee({ skills, direction }: SkillsMarqueeProps) {
+  const track = [...skills, ...skills];
   return (
-    <div className="marquee relative overflow-hidden py-3">
+    <div className="marquee relative overflow-hidden">
       <div
-        className={cn(
-          "marquee-track",
-          direction === "right" && "marquee-track--right"
-        )}
+        className={`marquee-track marquee-track--${direction}`}
+        aria-hidden={false}
       >
-        {items.map((skill, i) => (
+        {track.map((skill, index) => (
           <span
-            key={`${skill}-${i}`}
-            className="marquee-item text-base font-medium tracking-wide whitespace-nowrap sm:text-lg lg:text-xl"
+            key={`${skill}-${index}`}
+            className="marquee-item mx-3 border border-primary/20 bg-card px-4 py-1.5 text-base font-medium whitespace-nowrap sm:text-lg md:text-xl"
           >
             {skill}
-            <span className="mx-6 text-primary/40">✦</span>
           </span>
         ))}
       </div>
