@@ -27,7 +27,7 @@ export function ContactsSection() {
       <h2 className="text-2xl font-bold tracking-tight text-center mb-8">
         Контакты
       </h2>
-      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-6">
+      <div className="flex flex-wrap items-center justify-center gap-6">
         {contacts.map((contact) => {
           const Icon = contact.icon;
           return (
@@ -36,10 +36,10 @@ export function ContactsSection() {
               href={contact.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex w-full items-center justify-center gap-3 px-4 py-2 ring-1 ring-foreground/5 bg-card transition-colors hover:ring-primary/40 sm:w-auto sm:flex-none"
+              className="group flex w-full items-center justify-center gap-3 px-4 py-2 ring-1 ring-foreground/5 bg-card transition-colors hover:ring-primary/40"
             >
               <Icon className="h-5 w-5 text-primary shrink-0" />
-              <div className="min-w-0">
+              <div className="min-w-0 text-left">
                 <div className="text-xs text-muted-foreground">
                   {contact.label}
                 </div>
@@ -54,4 +54,3 @@ export function ContactsSection() {
     </div>
   );
 }
-
