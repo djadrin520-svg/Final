@@ -182,7 +182,7 @@ export default function HomePage() {
           <div className="flex flex-col items-center gap-12">
             <div className="grid w-full items-center gap-6 lg:grid-cols-[auto_1fr] lg:gap-6">
               <div className="relative mx-auto shrink-0 w-40 sm:w-44 lg:mx-0">
-                <div className="feather-edges relative aspect-square overflow-hidden">
+                <div className="relative aspect-square overflow-hidden rounded-full ring-2 ring-green-950">
                   <Image
                     src="/assets/814384624.jpeg"
                     alt="Дмитрий Ядрин"
