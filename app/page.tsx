@@ -204,26 +204,24 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="w-full max-w-3xl border-t border-border pt-6">
-              <div className="flex flex-nowrap items-stretch justify-between gap-4">
-                {[
-                  { value: "5+ лет", label: "в продакшене" },
-                  { value: "3 жанровых", label: "направления" },
-                  { value: "Более 15", label: "успешных проектов" },
-                ].map((item) => (
-                  <div key={item.value} className="flex-1 text-center">
-                    <div className="text-2xl font-bold text-primary sm:text-3xl">
-                      {item.value}
-                    </div>
-                    <div className="text-sm text-muted-foreground sm:text-base">
-                      {item.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+           <div className="w-full max-w-3xl border-t border-border pt-6">
+  <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-stretch sm:justify-between sm:gap-4">
+    {[
+      { value: "5+ лет", label: "в продакшене" },
+      { value: "3 жанровых", label: "направления" },
+      { value: "Более 15", label: "успешных проектов" },
+    ].map((item) => (
+      <div key={item.value} className="text-center sm:flex-1">
+        <div className="text-2xl font-bold text-primary sm:text-3xl">
+          {item.value}
         </div>
+        <div className="text-sm text-muted-foreground sm:text-base">
+          {item.label}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
       </section>
 
       {/* 3. Опыт работы */}
