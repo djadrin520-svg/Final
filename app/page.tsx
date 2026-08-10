@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Disc3, Radio, AudioWaveform } from "lucide-react";
 import { SkillsSection } from "@/components/skills-section";
 import { SkillsMarquee } from "@/components/skills-marquee";
@@ -158,7 +157,6 @@ const education = [
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero */}
       <section className="min-h-[calc(100vh-9rem)] flex flex-col items-center justify-center px-4 py-16">
         <div className="max-w-3xl w-full text-center space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div className="space-y-4">
@@ -176,19 +174,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Обо мне */}
       <section className="py-24 px-4 bg-muted/30 overflow-hidden">
         <div className="mx-auto w-full max-w-7xl">
           <div className="flex flex-col items-center gap-12">
             <div className="grid w-full items-center gap-6 lg:grid-cols-[auto_1fr] lg:gap-6">
               <div className="relative mx-auto shrink-0 w-40 sm:w-44 lg:mx-0">
-                <div className="relative aspect-square overflow-hidden rounded-full ring-2 ring-green-950">
-                  <Image
+                <div className="aspect-square overflow-hidden rounded-full ring-2 ring-green-950">
+                  <img
                     src="/assets/814384624.jpeg"
                     alt="Дмитрий Ядрин"
-                    fill
-                    sizes="11rem"
-                    className="object-cover"
+                    width={500}
+                    height={500}
+                    className="size-full object-cover"
                   />
                 </div>
               </div>
@@ -204,24 +201,28 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-           <div className="w-full max-w-3xl border-t border-border pt-6">
-  <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-stretch sm:justify-between sm:gap-4">
-    {[
-      { value: "5+ лет", label: "в продакшене" },
-      { value: "3 жанровых", label: "направления" },
-      { value: "Более 15", label: "успешных проектов" },
-    ].map((item) => (
-      <div key={item.value} className="text-center sm:flex-1">
-        <div className="text-2xl font-bold text-primary sm:text-3xl">
-          {item.value}
+            <div className="w-full max-w-3xl border-t border-border pt-6">
+              <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-stretch sm:justify-between sm:gap-4">
+                {[
+                  { value: "5+ лет", label: "в продакшене" },
+                  { value: "3 жанровых", label: "направления" },
+                  { value: "Более 15", label: "успешных проектов" },
+                ].map((item) => (
+                  <div key={item.value} className="text-center sm:flex-1">
+                    <div className="text-2xl font-bold text-primary sm:text-3xl">
+                      {item.value}
+                    </div>
+                    <div className="text-sm text-muted-foreground sm:text-base">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="text-sm text-muted-foreground sm:text-base">
-          {item.label}
-        </div>
-      </div>
-    ))}
       </section>
-   {/* 3. Опыт работы */}
+
       <section className="py-24 px-4">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold tracking-tight text-center mb-16">
@@ -292,7 +293,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Музыкальные проекты */}
       <section className="py-24 px-4 bg-muted/30">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold tracking-tight text-center mb-16">
@@ -332,7 +332,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Портфолио проектов */}
       <section className="py-24 px-4">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold tracking-tight text-center mb-16">
@@ -342,7 +341,7 @@ export default function HomePage() {
             {portfolioProjects.map((project) => (
               <div
                 key={project.title}
-                className="card-hover bg-card p-6 ring-1 ring-foreground/5 flex flex-col"
+                className="card-hover rounded-xl bg-card p-6 ring-1 ring-foreground/5 flex flex-col"
               >
                 <h3 className="font-semibold mb-3">{project.title}</h3>
                 <div className="text-xs font-mono text-primary mb-3">
@@ -357,10 +356,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Навыки */}
       <SkillsSection />
 
-      {/* 7. Образование */}
       <section className="py-24 px-4 bg-muted/30">
         <div className="mx-auto w-full max-w-7xl">
           <h2 className="text-3xl font-bold tracking-tight text-center mb-16">
@@ -386,8 +383,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* 8. Контакты — в футере (layout.tsx) */}
     </>
   );
 }
+
