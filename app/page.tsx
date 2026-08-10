@@ -220,11 +220,8 @@ export default function HomePage() {
         </div>
       </div>
     ))}
-  </div>
-</div>
       </section>
-
-      {/* 3. Опыт работы */}
+   {/* 3. Опыт работы */}
       <section className="py-24 px-4">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold tracking-tight text-center mb-16">
