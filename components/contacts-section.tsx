@@ -1,21 +1,18 @@
-import { MessageCircle, Mail, Palette } from "lucide-react";
+import { Mail, MessageCircle, Palette } from "lucide-react";
 
 const contacts = [
   {
     label: "Telegram",
-    value: "@dmitriyyadrin",
     href: "https://t.me/dmitriyyadrin",
     icon: MessageCircle,
   },
   {
     label: "Email",
-    value: "d.jadrin520@gmail.com",
     href: "mailto:d.jadrin520@gmail.com",
     icon: Mail,
   },
   {
     label: "Behance",
-    value: "behance.net/dmitriyyadrin",
     href: "https://www.behance.net/dmitriyyadrin",
     icon: Palette,
   },
@@ -23,34 +20,19 @@ const contacts = [
 
 export function ContactsSection() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold tracking-tight text-center mb-8">
-        Контакты
-      </h2>
-      <div className="flex flex-wrap items-center justify-center gap-6">
-        {contacts.map((contact) => {
-          const Icon = contact.icon;
-          return (
-            <a
-              key={contact.label}
-              href={contact.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-3 px-4 py-2 ring-1 ring-foreground/5 bg-card transition-colors hover:ring-primary/40 min-w-[260px] sm:min-w-0"
-            >
-              <Icon className="h-5 w-5 text-primary shrink-0" />
-              <div className="min-w-0 text-left">
-                <div className="text-xs text-muted-foreground">
-                  {contact.label}
-                </div>
-                <div className="text-sm font-medium group-hover:text-primary">
-                  {contact.value}
-                </div>
-              </div>
-            </a>
-          );
-        })}
-      </div>
+    <div className="flex items-stretch gap-3 pb-6 sm:justify-center sm:gap-6">
+      {contacts.map((contact) => (
+        <a
+          key={contact.label}
+          href={contact.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex min-w-0 flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:flex-none sm:px-0 sm:py-0 sm:hover:bg-transparent"
+        >
+          <contact.icon className="h-4 w-4 shrink-0" />
+          <span className="truncate">{contact.label}</span>
+        </a>
+      ))}
     </div>
   );
 }
