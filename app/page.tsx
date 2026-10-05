@@ -14,7 +14,7 @@ const experience = [
     ],
   },
   {
-    period: "2021 — наст. время",
+    period: "2021 — окт.2026",
     company: "Банк Санкт-Петербург",
     role: "Project Manager / AI Business Analyst",
     results: [
